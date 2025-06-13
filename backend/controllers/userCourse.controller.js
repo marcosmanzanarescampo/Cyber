@@ -75,7 +75,7 @@ export const getUserCoursesController = async (req, res) => {
   if (!token) {
     return res.status(401).json({
       ok: false,
-      message: "Token d'accès manquant",
+      message: "unknown user",
       user: null,
     });
   }

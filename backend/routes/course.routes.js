@@ -27,7 +27,6 @@ router.post(
 );
 router.delete("/:course", verifyAuthentification, deleteCourseController);
 
-// router.get("/user/:pseudo", verifyAuthentification, getUserCoursesController);
 router.get(
   "/download/:course",
   verifyAuthentification,
