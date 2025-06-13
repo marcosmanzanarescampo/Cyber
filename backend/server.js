@@ -56,7 +56,7 @@ app.use(express.static(frontPath));
 
 // Pour gérer le fallback des routes côté client (React Router)
 app.get("*", (req, res) => {
-  res.sendFile(path.join(frontPath, "index.html"));
+  res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
 });
 
 // user routes
