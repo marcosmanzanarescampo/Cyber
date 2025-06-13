@@ -67,9 +67,6 @@ export const forgottenPasswordUserController = async (req, res) => {
     );
 
     // 3. Créer le lien de réinitialisation du mot de passe et l'envoyer à l'utilisateur
-    // const passwordResetLink = `${req.protocol}://${req.get(
-    //   "host"
-    // )}/user/reset-password?token=${token}`;
     const passwordResetLink = `${process.env.FRONTEND}/reset-password2?token=${token}`;
 
     // 4. Configuration du mail

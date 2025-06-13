@@ -1,4 +1,4 @@
-// routes/course.routes.js
+// backend/routes/userCourse.routes.js
 import express from "express";
 
 // middleware pour la vérification d'authentification

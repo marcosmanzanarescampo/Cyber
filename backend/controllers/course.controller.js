@@ -140,64 +140,6 @@ export const getAllCoursesController = async (req, res) => {
   }
 };
 
-// export const deleteCourseController = async (req, res) => {
-//   if (!req.params.id) {
-//     throw new Error("course to delete required");
-//   }
-//   const courseToDelete = req.params.id;
-
-//   if (!req.cookies.refreshToken) {
-//     return res.status(401).json({ ok: false, message: "Token required" });
-//   }
-//   const refreshToken = req.cookies.refreshToken;
-
-//   const { ok, status, message } = await ValidateIsAdminFromRefreshToken(
-//     refreshToken
-//   );
-
-//   if (!ok) {
-//     return {
-//       ok,
-//       status,
-//       message,
-//     };
-//   }
-//   // Seulement l'administrateur peut supprimer des courses
-//   // Extraire info du token
-//   try {
-//     // Seulement on peux supprimer un cours s'il n'est pas affecté à aucun utilisateur
-//     const ObjectId = mongoose.Types.ObjectId;
-
-//     const cleanCourseToDelete = courseToDelete.startsWith(":")
-//       ? courseToDelete.slice(1).trim()
-//       : courseToDelete.trim();
-
-//     let result = null;
-//     if (ObjectId.isValid(cleanCourseToDelete)) {
-//       result = await UserCourse.findOne({
-//         course: new ObjectId(cleanCourseToDelete),
-//       });
-//     } else {
-//       console.warn(`Invalid courseToDelete ObjectId: ${cleanCourseToDelete}`);
-//     }
-
-//     const deleteOk = !(await courseInUse(cleanCourseToDelete));
-
-//     if (!deleteOk) {
-//       return res.status(401).json({
-//         ok: false,
-//         message:
-//           "impossible to delete le course, users are affected to this course",
-//       });
-//     }
-//     // On peut supprimer le cours
-//     await deleteCourse(cleanCourseToDelete);
-//     res.status(status).json({ ok, message });
-//   } catch (error) {
-//     res.status(500).json({ ok: false, message: "server error" });
-//   }
-// };
-
 export const deleteCourseController = async (req, res) => {
   try {
     const courseId = req.params.id?.startsWith(":")
