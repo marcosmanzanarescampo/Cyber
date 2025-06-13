@@ -50,6 +50,15 @@ await createAdminUser();
 
 // Middlewares
 
+// user routes
+app.use("/user", UserRouter);
+// cours routes
+app.use("/course", CoursRouter);
+// userCours routes
+app.use("/userCourse", UserCourseRouter);
+// Refresh token
+app.use("/auth", authRouter);
+
 // Permet d’accéder à tous les fichiers HTML dans le dossier front. utilisé pour la rédirection vers reset-password
 const frontPath = path.join(__dirname, "../frontend/dist");
 app.use(express.static(frontPath));
@@ -59,13 +68,5 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
 });
 
-// user routes
-app.use("/user", UserRouter);
-// cours routes
-app.use("/course", CoursRouter);
-// userCours routes
-app.use("/userCourse", UserCourseRouter);
-// Refresh token
-app.use("/auth", authRouter);
 // lancer le serveur on port 5000
 app.listen(port, () => console.log("\x1b[32m%s\x1b[0m", "Server ready"));
