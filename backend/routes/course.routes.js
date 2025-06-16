@@ -25,8 +25,6 @@ router.post(
   verifyAuthentification, // middleware de vérification de l'authentification
   createCourseController
 );
-// router.delete("/:course", verifyAuthentification, deleteCourseController);
-
 router.get(
   "/download/:course",
   verifyAuthentification,

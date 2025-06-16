@@ -59,13 +59,16 @@ app.use("/userCourse", UserCourseRouter);
 // Refresh token
 app.use("/auth", authRouter);
 
-// Permet d’accéder à tous les fichiers HTML dans le dossier front. utilisé pour la rédirection vers reset-password
-const frontPath = path.join(__dirname, "../frontend/dist");
-app.use(express.static(frontPath));
+// Servir le frontend en production
+const frontendPath = path.resolve(__dirname, "..", "frontend", "dist");
+app.use(express.static(frontendPath));
 
-// Pour gérer le fallback des routes côté client (React Router)
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(frontendPath, "index.html"));
+// });
+app.use((req, res, next) => {
+  res.sendFile(path.join(frontendPath, "index.html"));
+>>>>>>> d9c316c (ç upload projet)
 });
 
 // lancer le serveur on port 5000

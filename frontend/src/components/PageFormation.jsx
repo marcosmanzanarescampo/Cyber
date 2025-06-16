@@ -6,7 +6,6 @@ import FormationButton from "./formation/FormationButton.jsx";
 import Navbar from "./header/Navbar.jsx";
 import { getNavbarLinks } from "./header/GetNavbarLinks.jsx";
 import { apiRequest } from "../outils/apiRequest";
-// import { fetchCourses } from "../outils/fetchCourses.js";
 import { fetchUserCourses } from "../outils/fetchUserCourses.js";
 import "../css/pages/AdminDashboard.css";
 
