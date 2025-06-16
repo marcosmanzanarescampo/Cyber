@@ -51,7 +51,7 @@ await createAdminUser();
 // Middlewares
 
 // Permet d’accéder à tous les fichiers HTML dans le dossier front. utilisé pour la rédirection vers reset-password
-app.use(express.static("../frontend"));
+// app.use(express.static("../frontend"));
 
 // user routes
 app.use("/user", UserRouter);
