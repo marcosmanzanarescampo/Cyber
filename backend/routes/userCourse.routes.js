@@ -1,6 +1,6 @@
 // backend/routes/userCourse.routes.js
-import express from "express";
 
+import express from "express";
 // middleware pour la vérification d'authentification
 import { verifyAuthentification } from "../middleware/authentification.middleware.js";
 import {

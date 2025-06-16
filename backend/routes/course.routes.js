@@ -25,6 +25,7 @@ router.post(
   verifyAuthentification, // middleware de vérification de l'authentification
   createCourseController
 );
+
 router.get(
   "/download/:course",
   verifyAuthentification,

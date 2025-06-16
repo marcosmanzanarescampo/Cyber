@@ -40,6 +40,8 @@ router.get("/me", verifyAuthentification, userInfoController);
 router.patch("/saveInfo", verifyAuthentification, saveUserInfoController);
 router.delete("/delete/:id", verifyAuthentification, deleteUserController);
 router.get("/users", verifyAuthentification, getAllUsersController);
+router.get("/courses/:id", verifyAuthentification, getUserCoursesController);
+
 // ROUTES PROTEGEES ***********************************************
 
 export default router;
