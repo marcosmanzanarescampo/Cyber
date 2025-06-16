@@ -68,7 +68,6 @@ app.use(express.static(frontendPath));
 // });
 app.use((req, res, next) => {
   res.sendFile(path.join(frontendPath, "index.html"));
->>>>>>> d9c316c (ç upload projet)
 });
 
 // lancer le serveur on port 5000
