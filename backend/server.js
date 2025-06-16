@@ -61,7 +61,6 @@ app.use("/course", CoursRouter);
 app.use("/userCourse", UserCourseRouter);
 // Refresh token
 app.use("/auth", authRouter);
-<<<<<<< HEAD
 
 // Servir le frontend en production
 const frontendPath = path.resolve(__dirname, "..", "frontend", "dist");
@@ -74,7 +73,5 @@ app.use((req, res, next) => {
   res.sendFile(path.join(frontendPath, "index.html"));
 });
 
-=======
->>>>>>> d9028ea (12 upload projet)
 // lancer le serveur on port 5000
 app.listen(port, () => console.log("\x1b[32m%s\x1b[0m", "Server ready"));
