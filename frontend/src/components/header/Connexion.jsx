@@ -1,6 +1,6 @@
 // frontend/src/components/header/Connexion.jsx
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { signin } from "../../outils/singin.js";
 
 export function Connexion({
@@ -81,11 +81,11 @@ export function Connexion({
       </div>
       <div className="footer-connexion">
         <p className="footer-button">
-          <a href="/reset-password">{footerText1}</a>
+          <Link to="/reset-password">{footerText1}</Link>
         </p>
         <p className="footer-text">
           {footerText2}
-          <a href="/register">{clickValue}</a>
+          <Link to="/register">{clickValue}</Link>
         </p>
       </div>
     </div>

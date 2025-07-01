@@ -1,0 +1,375 @@
+nohup: les entrées sont ignorées
+authController.js loaded
+Mongo connecté
+[38;5;208mRead .env file pour admin credentials[0m
+[32mServer ready[0m
+refreshTokenController triggered!
+user searched:  6847ef1f9aed6a27fc4d5392
+user exists?  {
+  _id: new ObjectId('6847ef1f9aed6a27fc4d5392'),
+  name: 'marcos',
+  first_name: 'manzanares',
+  pseudo: 'marquitos',
+  email: 'marcosmanzanaresdev@gmail.com',
+  password: '$2b$10$3UXWXO47pXYfrBOQSG2wL.aThwoE25UXYKkFfu/Ia2qb3RbVUabsa',
+  phone: '2345423454',
+  address: '4 rue du potiron',
+  role: 'user',
+  createdAt: 2025-06-10T08:38:55.360Z,
+  updatedAt: 2025-06-25T08:59:11.095Z,
+  __v: 0,
+  resetPasswordToken: '4f325860e386495baaa563b70ef0f6a9fdfed2f4a59bbdb8d7507d1020a58d7f',
+  resetPasswordTokenExpires: 2025-06-24T14:07:14.662Z
+}
+Refresh token invalide ou expiré : Error: Illegal arguments: string, undefined
+    at _async (file:///var/www/veilink/backend/node_modules/bcryptjs/index.js:252:11)
+    at file:///var/www/veilink/backend/node_modules/bcryptjs/index.js:280:7
+    at new Promise (<anonymous>)
+    at Object.compare (file:///var/www/veilink/backend/node_modules/bcryptjs/index.js:279:12)
+    at compareTokens (file:///var/www/veilink/backend/outils/token.outils.js:59:23)
+    at refreshTokenController (file:///var/www/veilink/backend/controllers/authController.js:51:32)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+refreshTokenController triggered!
+user searched:  6847ef1f9aed6a27fc4d5392
+user exists?  {
+  _id: new ObjectId('6847ef1f9aed6a27fc4d5392'),
+  name: 'marcos',
+  first_name: 'manzanares',
+  pseudo: 'marquitos',
+  email: 'marcosmanzanaresdev@gmail.com',
+  password: '$2b$10$3UXWXO47pXYfrBOQSG2wL.aThwoE25UXYKkFfu/Ia2qb3RbVUabsa',
+  phone: '2345423454',
+  address: '4 rue du potiron',
+  role: 'user',
+  createdAt: 2025-06-10T08:38:55.360Z,
+  updatedAt: 2025-06-25T08:59:11.095Z,
+  __v: 0,
+  resetPasswordToken: '4f325860e386495baaa563b70ef0f6a9fdfed2f4a59bbdb8d7507d1020a58d7f',
+  resetPasswordTokenExpires: 2025-06-24T14:07:14.662Z
+}
+Refresh token invalide ou expiré : Error: Illegal arguments: string, undefined
+    at _async (file:///var/www/veilink/backend/node_modules/bcryptjs/index.js:252:11)
+    at file:///var/www/veilink/backend/node_modules/bcryptjs/index.js:280:7
+    at new Promise (<anonymous>)
+    at Object.compare (file:///var/www/veilink/backend/node_modules/bcryptjs/index.js:279:12)
+    at compareTokens (file:///var/www/veilink/backend/outils/token.outils.js:59:23)
+    at refreshTokenController (file:///var/www/veilink/backend/controllers/authController.js:51:32)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+refreshTokenController triggered!
+user searched:  6847ef1f9aed6a27fc4d5392
+user exists?  {
+  _id: new ObjectId('6847ef1f9aed6a27fc4d5392'),
+  name: 'marcos',
+  first_name: 'manzanares',
+  pseudo: 'marquitos',
+  email: 'marcosmanzanaresdev@gmail.com',
+  password: '$2b$10$3UXWXO47pXYfrBOQSG2wL.aThwoE25UXYKkFfu/Ia2qb3RbVUabsa',
+  phone: '2345423454',
+  address: '4 rue du potiron',
+  role: 'user',
+  createdAt: 2025-06-10T08:38:55.360Z,
+  updatedAt: 2025-06-25T08:59:11.095Z,
+  __v: 0,
+  resetPasswordToken: '4f325860e386495baaa563b70ef0f6a9fdfed2f4a59bbdb8d7507d1020a58d7f',
+  resetPasswordTokenExpires: 2025-06-24T14:07:14.662Z
+}
+Refresh token invalide ou expiré : Error: Illegal arguments: string, undefined
+    at _async (file:///var/www/veilink/backend/node_modules/bcryptjs/index.js:252:11)
+    at file:///var/www/veilink/backend/node_modules/bcryptjs/index.js:280:7
+    at new Promise (<anonymous>)
+    at Object.compare (file:///var/www/veilink/backend/node_modules/bcryptjs/index.js:279:12)
+    at compareTokens (file:///var/www/veilink/backend/outils/token.outils.js:59:23)
+    at refreshTokenController (file:///var/www/veilink/backend/controllers/authController.js:51:32)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+refreshTokenController triggered!
+user searched:  6847ef1f9aed6a27fc4d5392
+user exists?  {
+  _id: new ObjectId('6847ef1f9aed6a27fc4d5392'),
+  name: 'marcos',
+  first_name: 'manzanares',
+  pseudo: 'marquitos',
+  email: 'marcosmanzanaresdev@gmail.com',
+  password: '$2b$10$3UXWXO47pXYfrBOQSG2wL.aThwoE25UXYKkFfu/Ia2qb3RbVUabsa',
+  phone: '2345423454',
+  address: '4 rue du potiron',
+  role: 'user',
+  createdAt: 2025-06-10T08:38:55.360Z,
+  updatedAt: 2025-06-25T08:59:11.095Z,
+  __v: 0,
+  resetPasswordToken: '4f325860e386495baaa563b70ef0f6a9fdfed2f4a59bbdb8d7507d1020a58d7f',
+  resetPasswordTokenExpires: 2025-06-24T14:07:14.662Z
+}
+Refresh token invalide ou expiré : Error: Illegal arguments: string, undefined
+    at _async (file:///var/www/veilink/backend/node_modules/bcryptjs/index.js:252:11)
+    at file:///var/www/veilink/backend/node_modules/bcryptjs/index.js:280:7
+    at new Promise (<anonymous>)
+    at Object.compare (file:///var/www/veilink/backend/node_modules/bcryptjs/index.js:279:12)
+    at compareTokens (file:///var/www/veilink/backend/outils/token.outils.js:59:23)
+    at refreshTokenController (file:///var/www/veilink/backend/controllers/authController.js:51:32)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+refreshTokenController triggered!
+user searched:  6847ef1f9aed6a27fc4d5392
+user exists?  {
+  _id: new ObjectId('6847ef1f9aed6a27fc4d5392'),
+  name: 'marcos',
+  first_name: 'manzanares',
+  pseudo: 'marquitos',
+  email: 'marcosmanzanaresdev@gmail.com',
+  password: '$2b$10$3UXWXO47pXYfrBOQSG2wL.aThwoE25UXYKkFfu/Ia2qb3RbVUabsa',
+  phone: '2345423454',
+  address: '4 rue du potiron',
+  role: 'user',
+  createdAt: 2025-06-10T08:38:55.360Z,
+  updatedAt: 2025-06-25T08:59:11.095Z,
+  __v: 0,
+  resetPasswordToken: '4f325860e386495baaa563b70ef0f6a9fdfed2f4a59bbdb8d7507d1020a58d7f',
+  resetPasswordTokenExpires: 2025-06-24T14:07:14.662Z
+}
+Refresh token invalide ou expiré : Error: Illegal arguments: string, undefined
+    at _async (file:///var/www/veilink/backend/node_modules/bcryptjs/index.js:252:11)
+    at file:///var/www/veilink/backend/node_modules/bcryptjs/index.js:280:7
+    at new Promise (<anonymous>)
+    at Object.compare (file:///var/www/veilink/backend/node_modules/bcryptjs/index.js:279:12)
+    at compareTokens (file:///var/www/veilink/backend/outils/token.outils.js:59:23)
+    at refreshTokenController (file:///var/www/veilink/backend/controllers/authController.js:51:32)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+refreshTokenController triggered!
+user searched:  6847ef1f9aed6a27fc4d5392
+user exists?  {
+  _id: new ObjectId('6847ef1f9aed6a27fc4d5392'),
+  name: 'marcos',
+  first_name: 'manzanares',
+  pseudo: 'marquitos',
+  email: 'marcosmanzanaresdev@gmail.com',
+  password: '$2b$10$3UXWXO47pXYfrBOQSG2wL.aThwoE25UXYKkFfu/Ia2qb3RbVUabsa',
+  phone: '2345423454',
+  address: '4 rue du potiron',
+  role: 'user',
+  createdAt: 2025-06-10T08:38:55.360Z,
+  updatedAt: 2025-06-25T08:59:11.095Z,
+  __v: 0,
+  resetPasswordToken: '4f325860e386495baaa563b70ef0f6a9fdfed2f4a59bbdb8d7507d1020a58d7f',
+  resetPasswordTokenExpires: 2025-06-24T14:07:14.662Z
+}
+Refresh token invalide ou expiré : Error: Illegal arguments: string, undefined
+    at _async (file:///var/www/veilink/backend/node_modules/bcryptjs/index.js:252:11)
+    at file:///var/www/veilink/backend/node_modules/bcryptjs/index.js:280:7
+    at new Promise (<anonymous>)
+    at Object.compare (file:///var/www/veilink/backend/node_modules/bcryptjs/index.js:279:12)
+    at compareTokens (file:///var/www/veilink/backend/outils/token.outils.js:59:23)
+    at refreshTokenController (file:///var/www/veilink/backend/controllers/authController.js:51:32)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+refreshTokenController triggered!
+user searched:  6847ef1f9aed6a27fc4d5392
+user exists?  {
+  _id: new ObjectId('6847ef1f9aed6a27fc4d5392'),
+  name: 'marcos',
+  first_name: 'manzanares',
+  pseudo: 'marquitos',
+  email: 'marcosmanzanaresdev@gmail.com',
+  password: '$2b$10$3UXWXO47pXYfrBOQSG2wL.aThwoE25UXYKkFfu/Ia2qb3RbVUabsa',
+  phone: '2345423454',
+  address: '4 rue du potiron',
+  role: 'user',
+  createdAt: 2025-06-10T08:38:55.360Z,
+  updatedAt: 2025-06-25T08:59:11.095Z,
+  __v: 0,
+  resetPasswordToken: '4f325860e386495baaa563b70ef0f6a9fdfed2f4a59bbdb8d7507d1020a58d7f',
+  resetPasswordTokenExpires: 2025-06-24T14:07:14.662Z
+}
+Refresh token invalide ou expiré : Error: Illegal arguments: string, undefined
+    at _async (file:///var/www/veilink/backend/node_modules/bcryptjs/index.js:252:11)
+    at file:///var/www/veilink/backend/node_modules/bcryptjs/index.js:280:7
+    at new Promise (<anonymous>)
+    at Object.compare (file:///var/www/veilink/backend/node_modules/bcryptjs/index.js:279:12)
+    at compareTokens (file:///var/www/veilink/backend/outils/token.outils.js:59:23)
+    at refreshTokenController (file:///var/www/veilink/backend/controllers/authController.js:51:32)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+refreshTokenController triggered!
+user searched:  6847ef1f9aed6a27fc4d5392
+user exists?  {
+  _id: new ObjectId('6847ef1f9aed6a27fc4d5392'),
+  name: 'marcos',
+  first_name: 'manzanares',
+  pseudo: 'marquitos',
+  email: 'marcosmanzanaresdev@gmail.com',
+  password: '$2b$10$3UXWXO47pXYfrBOQSG2wL.aThwoE25UXYKkFfu/Ia2qb3RbVUabsa',
+  phone: '2345423454',
+  address: '4 rue du potiron',
+  role: 'user',
+  createdAt: 2025-06-10T08:38:55.360Z,
+  updatedAt: 2025-06-25T08:59:11.095Z,
+  __v: 0,
+  resetPasswordToken: '4f325860e386495baaa563b70ef0f6a9fdfed2f4a59bbdb8d7507d1020a58d7f',
+  resetPasswordTokenExpires: 2025-06-24T14:07:14.662Z
+}
+Refresh token invalide ou expiré : Error: Illegal arguments: string, undefined
+    at _async (file:///var/www/veilink/backend/node_modules/bcryptjs/index.js:252:11)
+    at file:///var/www/veilink/backend/node_modules/bcryptjs/index.js:280:7
+    at new Promise (<anonymous>)
+    at Object.compare (file:///var/www/veilink/backend/node_modules/bcryptjs/index.js:279:12)
+    at compareTokens (file:///var/www/veilink/backend/outils/token.outils.js:59:23)
+    at refreshTokenController (file:///var/www/veilink/backend/controllers/authController.js:51:32)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+refreshTokenController triggered!
+user searched:  6847ef1f9aed6a27fc4d5392
+user exists?  {
+  _id: new ObjectId('6847ef1f9aed6a27fc4d5392'),
+  name: 'marcos',
+  first_name: 'manzanares',
+  pseudo: 'marquitos',
+  email: 'marcosmanzanaresdev@gmail.com',
+  password: '$2b$10$3UXWXO47pXYfrBOQSG2wL.aThwoE25UXYKkFfu/Ia2qb3RbVUabsa',
+  phone: '2345423454',
+  address: '4 rue du potiron',
+  role: 'user',
+  createdAt: 2025-06-10T08:38:55.360Z,
+  updatedAt: 2025-06-25T08:59:11.095Z,
+  __v: 0,
+  resetPasswordToken: '4f325860e386495baaa563b70ef0f6a9fdfed2f4a59bbdb8d7507d1020a58d7f',
+  resetPasswordTokenExpires: 2025-06-24T14:07:14.662Z
+}
+Refresh token invalide ou expiré : Error: Illegal arguments: string, undefined
+    at _async (file:///var/www/veilink/backend/node_modules/bcryptjs/index.js:252:11)
+    at file:///var/www/veilink/backend/node_modules/bcryptjs/index.js:280:7
+    at new Promise (<anonymous>)
+    at Object.compare (file:///var/www/veilink/backend/node_modules/bcryptjs/index.js:279:12)
+    at compareTokens (file:///var/www/veilink/backend/outils/token.outils.js:59:23)
+    at refreshTokenController (file:///var/www/veilink/backend/controllers/authController.js:51:32)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+refreshTokenController triggered!
+user searched:  6847ef1f9aed6a27fc4d5392
+user exists?  {
+  _id: new ObjectId('6847ef1f9aed6a27fc4d5392'),
+  name: 'marcos',
+  first_name: 'manzanares',
+  pseudo: 'marquitos',
+  email: 'marcosmanzanaresdev@gmail.com',
+  password: '$2b$10$3UXWXO47pXYfrBOQSG2wL.aThwoE25UXYKkFfu/Ia2qb3RbVUabsa',
+  phone: '2345423454',
+  address: '4 rue du potiron',
+  role: 'user',
+  createdAt: 2025-06-10T08:38:55.360Z,
+  updatedAt: 2025-06-25T08:59:11.095Z,
+  __v: 0,
+  resetPasswordToken: '4f325860e386495baaa563b70ef0f6a9fdfed2f4a59bbdb8d7507d1020a58d7f',
+  resetPasswordTokenExpires: 2025-06-24T14:07:14.662Z
+}
+Refresh token invalide ou expiré : Error: Illegal arguments: string, undefined
+    at _async (file:///var/www/veilink/backend/node_modules/bcryptjs/index.js:252:11)
+    at file:///var/www/veilink/backend/node_modules/bcryptjs/index.js:280:7
+    at new Promise (<anonymous>)
+    at Object.compare (file:///var/www/veilink/backend/node_modules/bcryptjs/index.js:279:12)
+    at compareTokens (file:///var/www/veilink/backend/outils/token.outils.js:59:23)
+    at refreshTokenController (file:///var/www/veilink/backend/controllers/authController.js:51:32)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+refreshTokenController triggered!
+user searched:  6847ef1f9aed6a27fc4d5392
+user exists?  {
+  _id: new ObjectId('6847ef1f9aed6a27fc4d5392'),
+  name: 'marcos',
+  first_name: 'manzanares',
+  pseudo: 'marquitos',
+  email: 'marcosmanzanaresdev@gmail.com',
+  password: '$2b$10$3UXWXO47pXYfrBOQSG2wL.aThwoE25UXYKkFfu/Ia2qb3RbVUabsa',
+  phone: '2345423454',
+  address: '4 rue du potiron',
+  role: 'user',
+  createdAt: 2025-06-10T08:38:55.360Z,
+  updatedAt: 2025-06-25T08:59:11.095Z,
+  __v: 0,
+  resetPasswordToken: '4f325860e386495baaa563b70ef0f6a9fdfed2f4a59bbdb8d7507d1020a58d7f',
+  resetPasswordTokenExpires: 2025-06-24T14:07:14.662Z
+}
+Refresh token invalide ou expiré : Error: Illegal arguments: string, undefined
+    at _async (file:///var/www/veilink/backend/node_modules/bcryptjs/index.js:252:11)
+    at file:///var/www/veilink/backend/node_modules/bcryptjs/index.js:280:7
+    at new Promise (<anonymous>)
+    at Object.compare (file:///var/www/veilink/backend/node_modules/bcryptjs/index.js:279:12)
+    at compareTokens (file:///var/www/veilink/backend/outils/token.outils.js:59:23)
+    at refreshTokenController (file:///var/www/veilink/backend/controllers/authController.js:51:32)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+refreshTokenController triggered!
+user searched:  6847ef1f9aed6a27fc4d5392
+user exists?  {
+  _id: new ObjectId('6847ef1f9aed6a27fc4d5392'),
+  name: 'marcos',
+  first_name: 'manzanares',
+  pseudo: 'marquitos',
+  email: 'marcosmanzanaresdev@gmail.com',
+  password: '$2b$10$3UXWXO47pXYfrBOQSG2wL.aThwoE25UXYKkFfu/Ia2qb3RbVUabsa',
+  phone: '2345423454',
+  address: '4 rue du potiron',
+  role: 'user',
+  createdAt: 2025-06-10T08:38:55.360Z,
+  updatedAt: 2025-06-25T08:59:11.095Z,
+  __v: 0,
+  resetPasswordToken: '4f325860e386495baaa563b70ef0f6a9fdfed2f4a59bbdb8d7507d1020a58d7f',
+  resetPasswordTokenExpires: 2025-06-24T14:07:14.662Z
+}
+Refresh token invalide ou expiré : Error: Illegal arguments: string, undefined
+    at _async (file:///var/www/veilink/backend/node_modules/bcryptjs/index.js:252:11)
+    at file:///var/www/veilink/backend/node_modules/bcryptjs/index.js:280:7
+    at new Promise (<anonymous>)
+    at Object.compare (file:///var/www/veilink/backend/node_modules/bcryptjs/index.js:279:12)
+    at compareTokens (file:///var/www/veilink/backend/outils/token.outils.js:59:23)
+    at refreshTokenController (file:///var/www/veilink/backend/controllers/authController.js:51:32)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+refreshTokenController triggered!
+user searched:  6847ef1f9aed6a27fc4d5392
+user exists?  {
+  _id: new ObjectId('6847ef1f9aed6a27fc4d5392'),
+  name: 'marcos',
+  first_name: 'manzanares',
+  pseudo: 'marquitos',
+  email: 'marcosmanzanaresdev@gmail.com',
+  password: '$2b$10$3UXWXO47pXYfrBOQSG2wL.aThwoE25UXYKkFfu/Ia2qb3RbVUabsa',
+  phone: '2345423454',
+  address: '4 rue du potiron',
+  role: 'user',
+  createdAt: 2025-06-10T08:38:55.360Z,
+  updatedAt: 2025-06-25T08:59:11.095Z,
+  __v: 0,
+  resetPasswordToken: '4f325860e386495baaa563b70ef0f6a9fdfed2f4a59bbdb8d7507d1020a58d7f',
+  resetPasswordTokenExpires: 2025-06-24T14:07:14.662Z
+}
+Refresh token invalide ou expiré : Error: Illegal arguments: string, undefined
+    at _async (file:///var/www/veilink/backend/node_modules/bcryptjs/index.js:252:11)
+    at file:///var/www/veilink/backend/node_modules/bcryptjs/index.js:280:7
+    at new Promise (<anonymous>)
+    at Object.compare (file:///var/www/veilink/backend/node_modules/bcryptjs/index.js:279:12)
+    at compareTokens (file:///var/www/veilink/backend/outils/token.outils.js:59:23)
+    at refreshTokenController (file:///var/www/veilink/backend/controllers/authController.js:51:32)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+refreshTokenController triggered!
+user searched:  683d5198cb3efccb40287057
+user exists?  {
+  _id: new ObjectId('683d5198cb3efccb40287057'),
+  name: 'admin',
+  first_name: 'undefined first_name',
+  pseudo: 'admin',
+  email: 'admin@gmail.com',
+  password: '$2b$10$T2mMc7rxkD6eKSOyE8JO8OJ9HWTbvK/qr84SGe7pw.BVYBkZNdc9i',
+  role: 'admin',
+  createdAt: 2025-06-02T07:24:08.871Z,
+  updatedAt: 2025-06-25T14:33:49.828Z,
+  __v: 0,
+  refreshToken: '$2b$10$tMsaISRd3U02lTl8VD9BwOwpofWOrF1Vxm6dANTBT4zqKv8jozy2K'
+}
+refreshTokenController triggered!
+user searched:  683d5198cb3efccb40287057
+user exists?  {
+  _id: new ObjectId('683d5198cb3efccb40287057'),
+  name: 'admin',
+  first_name: 'undefined first_name',
+  pseudo: 'admin',
+  email: 'admin@gmail.com',
+  password: '$2b$10$T2mMc7rxkD6eKSOyE8JO8OJ9HWTbvK/qr84SGe7pw.BVYBkZNdc9i',
+  role: 'admin',
+  createdAt: 2025-06-02T07:24:08.871Z,
+  updatedAt: 2025-06-25T14:34:33.414Z,
+  __v: 0,
+  refreshToken: '$2b$10$8KtyZmmi6.MKjB9HnuM6zu8ai.SfSw.0CN8fQ27TDdfzWBqaZdbiS'
+}
+refreshTokenController triggered!
+refreshTokenController triggered!

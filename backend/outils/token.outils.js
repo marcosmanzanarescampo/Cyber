@@ -72,6 +72,61 @@ export function tokenIsValid(token, secret) {
   }
 }
 
+// export async function ValidateIsAdminFromRefreshToken(token) {
+//   // 1. Vérification du token
+//   if (!token) {
+//     return {
+//       ok: false,
+//       status: 401,
+//       message: "Refresh token missing",
+//     };
+//   }
+
+//   let decodedPayload;
+//   try {
+//     //2. Décodification du refreshToken et comprobation de validité
+//     decodedPayload = verifyToken(token, process.env.JWT_REFRESH_SECRET);
+//   } catch (err) {
+//     return {
+//       ok: false,
+//       status: 403,
+//       message: "Invalid or expired refresh token",
+//     };
+//   }
+//   // 3. Seule l'administrateur a des droits d'accès
+//   // if (!decodedPayload.role === "admin") {
+//   if (decodedPayload.role !== "admin") // faux même si role = "admin"
+//     return {
+//       ok: false,
+//       status: 401,
+//       message: "operation restricted to administrator",
+//     };
+//   }
+//   //4. Récuperation de refreshToken du propiétaire
+//   const user = await userExists("_id", decodedPayload._id);
+
+//   if (!user || !user.refreshToken) {
+//     return {
+//       ok: false,
+//       status: 404,
+//       message: "User or token not found",
+//     };
+//   }
+//   //5. Validation entre les deux tokens (cookie et utilisateur). SECURITE ++
+//   const isTokenValid = await compareTokens(token, user.refreshToken);
+//   if (!isTokenValid) {
+//     return {
+//       ok: false,
+//       status: 403,
+//       message: "Refresh token does not match",
+//     };
+//   }
+//   return {
+//     ok: true,
+//     status: 200,
+//     message: "user is admin",
+//   };
+// }
 export async function ValidateIsAdminFromRefreshToken(token) {
   // 1. Vérification du token
   if (!token) {
@@ -84,7 +139,7 @@ export async function ValidateIsAdminFromRefreshToken(token) {
 
   let decodedPayload;
   try {
-    //2. Décodification du refreshToken et comprobation de validité
+    // 2. Décodification du refreshToken et vérification de validité
     decodedPayload = verifyToken(token, process.env.JWT_REFRESH_SECRET);
   } catch (err) {
     return {
@@ -93,15 +148,17 @@ export async function ValidateIsAdminFromRefreshToken(token) {
       message: "Invalid or expired refresh token",
     };
   }
-  // 3. Seule l'administrateur a des droits d'accès
-  if (!decodedPayload.role === "admin") {
+
+  // 3. Seul l'administrateur a des droits d'accès
+  if (decodedPayload.role !== "admin") {
     return {
       ok: false,
       status: 401,
-      message: "operation restricted to administrator",
+      message: "Operation restricted to administrator",
     };
   }
-  //4. Récuperation de refreshToken du propiétaire
+
+  // 4. Récupération de l'utilisateur propriétaire du token
   const user = await userExists("_id", decodedPayload._id);
 
   if (!user || !user.refreshToken) {
@@ -111,7 +168,8 @@ export async function ValidateIsAdminFromRefreshToken(token) {
       message: "User or token not found",
     };
   }
-  //5. Validation entre les deux tokens (cookie et utilisateur). SECURITE ++
+
+  // 5. Validation entre les deux tokens (cookie et utilisateur) - Sécurité renforcée
   const isTokenValid = await compareTokens(token, user.refreshToken);
   if (!isTokenValid) {
     return {
@@ -120,10 +178,12 @@ export async function ValidateIsAdminFromRefreshToken(token) {
       message: "Refresh token does not match",
     };
   }
+
+  // Tout est OK
   return {
     ok: true,
     status: 200,
-    message: "user is admin",
+    message: "User is admin",
   };
 }
 

@@ -81,10 +81,21 @@ export const refreshTokenController = async (req, res) => {
       maxAge: Number(process.env.COOKIE_LIFETIME) || 7 * 24 * 60 * 60 * 1000,
     });
 
+    const safeUser = {
+      _id: user._id,
+      email: user.email,
+      role: user.role,
+      // ajoute d'autres champs utiles, mais jamais refreshToken ni mot de passe
+      name: user.name,
+      first_name: user.first_name,
+      phone: user.phone,
+      address: user.address,
+    };
+
     res.status(200).json({
       ok: true,
       message: "Access token refreshed successfully",
-      user,
+      user: safeUser,
     });
   } catch (error) {
     // Ici, le token est présent mais invalide ou expiré

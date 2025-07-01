@@ -4,6 +4,8 @@ import { apiRequest } from "./apiRequest.js";
 import { ROUTE_USER_INFO, ROUTE_SAVE_USER_INFO } from "../config.js";
 
 export async function getUserInfo() {
+  console.log("getUserInfo called");
+
   const url = ROUTE_USER_INFO;
 
   try {
@@ -17,6 +19,7 @@ export async function getUserInfo() {
 
     try {
       result = await response.json();
+      console.log("user info: ", result);
     } catch (e) {
       // JSON invalide ou vide
       return { ok: false, message: `Erreur HTTP ${response.status}` };

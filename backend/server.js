@@ -1,3 +1,5 @@
+// backend/server.js
+
 import express from "express";
 import UserRouter from "./routes/user.routes.js";
 import CoursRouter from "./routes/course.routes.js";
@@ -14,64 +16,76 @@ import { fileURLToPath } from "url";
 dotenv.config();
 
 const app = express();
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-app.use(cookieParser());
+const allowedOrigins = [
+  "http://veilink.tech",
+  "https://veilink.tech",
+  "http://www.veilink.tech",
+  "https://www.veilink.tech",
+  "http://localhost:5173",
+  "http://127.0.0.1:5173",
+];
+
+// Middleware CORS global
 app.use(
   cors({
-    origin: process.env.FRONTEND,
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, origin);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true,
   })
 );
-// Pour parser les JSON
+
+app.use(cookieParser());
+
+// Parser JSON et formulaires
 app.use(express.json());
-// Pour parser les formulaires (si tu envoies avec enctype=urlencoded)
+
 app.use(express.urlencoded({ extended: true }));
-// CORS pour les fichiers statiques
-app.use("/uploads", (req, res, next) => {
-  res.header("Access-Control-Allow-Origin", process.env.FRONTEND);
-  res.header("Access-Control-Allow-Methods", "GET,OPTIONS");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  next();
-});
-app.use("/uploads", express.static(path.join(__dirname, "..", "uploads")));
+
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 const port = process.env.BACKEND_PORT || 5000;
 
-// conexion à la BBDD
+// Connexion à la BDD
 await connectDB();
 
-// Création de l'utilisateur administrateur
+// Création utilisateur admin
 await createAdminUser();
 
-// Middlewares
-
-// Permet d’accéder à tous les fichiers HTML dans le dossier front. utilisé pour la rédirection vers reset-password
-// app.use(express.static("../frontend"));
-
-// user routes
+// Routes API
 app.use("/user", UserRouter);
-// cours routes
 app.use("/course", CoursRouter);
-// userCours routes
 app.use("/userCourse", UserCourseRouter);
-// Refresh token
 app.use("/auth", authRouter);
 
-// Servir le frontend en production
+// Dossier frontend buildé
 const frontendPath = path.resolve(__dirname, "..", "frontend", "dist");
+console.log("Frontend path:", frontendPath);
+
 app.use(express.static(frontendPath));
 
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(frontendPath, "index.html"));
-// });
+// Rediriger toutes les requêtes GET non API/non uploads vers React
 app.use((req, res, next) => {
-  res.sendFile(path.join(frontendPath, "index.html"));
+  if (
+    req.method === "GET" &&
+    !req.path.startsWith("/api") &&
+    !req.path.startsWith("/uploads")
+  ) {
+    res.sendFile(path.join(frontendPath, "index.html"));
+  } else {
+    next();
+  }
 });
 
-// lancer le serveur on port 5000
-app.listen(port, () => console.log("\x1b[32m%s\x1b[0m", "Server ready"));
+// Lancement serveur
+app.listen(port, () =>
+  console.log("\x1b[32m%s\x1b[0m", `Server ready on port ${port}`)
+);

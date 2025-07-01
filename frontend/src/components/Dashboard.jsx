@@ -9,6 +9,7 @@ import { getUserInfo, saveUserInfo } from "../outils/userInfo.js";
 import { fetchUserCourses } from "../outils/fetchUserCourses.js";
 import FormationCard from "./FormationCard";
 import { getNavbarLinks } from "./header/GetNavbarLinks.jsx";
+import profilePicture from "../assets/PP1.png";
 
 let ancienUserInfo = {};
 
@@ -122,7 +123,7 @@ export default function Dashboard() {
       <div className="page-dashboard" style={{ opacity: loading ? 0.5 : 1 }}>
         <div className="left-side">
           <div className="profile-picture">
-            <img src="./src/assets/PP1.png" alt="" />
+            <img src={profilePicture} alt="" />
           </div>
           <div className="profile-name">
             <p className="name">{userInfo.name}</p>

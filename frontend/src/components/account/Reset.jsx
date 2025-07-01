@@ -65,6 +65,7 @@ export default function Reset({ onChange, onSubmit }) {
       const { ok, message } = await forgetPassword(formData.email);
       alert(message);
     } catch (error) {
+      console.error("Erreur oubli mot de passe:", error);
       alert(
         "Erreur inattendue lors de la connexion, veuillez réessayer ultérieurement."
       );

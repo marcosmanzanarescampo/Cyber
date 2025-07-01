@@ -12,7 +12,10 @@ import CookieConsent from "./cookie/CookieConsent.jsx";
 import { useCookies } from "react-cookie";
 import { useEffect, useState } from "react";
 import { getNavbarLinks } from "./header/GetNavbarLinks.jsx";
-// import CookieConsent from "./cookie/CookieConsent.jsx";
+import elearningpng from "../assets/engagement.png";
+import engagementpng from "../assets/engagement.png";
+import ameliorationpng from "../assets/amelioration.png";
+import competencepng from "../assets/competence.png";
 
 function Page1() {
   const [links, setLinks] = useState([]);
@@ -55,7 +58,7 @@ function Page1() {
               backgroundColor="#1A81A0"
               color="#FFFFFF"
             />
-            <img src="src/assets/e-learning.png" alt="" />
+            <img src={elearningpng} alt="" />
           </div>
           <div className="page2-section2">
             <Text
@@ -73,9 +76,9 @@ function Page1() {
           </div>
         </div>
         <div className="page2-section3">
-          <img src="src/assets/engagement.png" alt="" />
-          <img src="src/assets/amelioration.png" alt="" />
-          <img src="src/assets/competence.png" alt="" />
+          <img src={engagementpng} alt="" />
+          <img src={ameliorationpng} alt="" />
+          <img src={competencepng} alt="" />
         </div>
       </div>
       <div className="page3">

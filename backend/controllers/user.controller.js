@@ -220,18 +220,25 @@ export const signInController = async (req, res) => {
     const { password: _, ...userWithoutPassword } = user.toObject();
 
     // Définir le cookie pour retourner le refresh token
+    // Options de cookie selon environnement
+    const isProduction = process.env.NODE_ENV === "production";
+
     res.cookie("refreshToken", refreshToken, {
       httpOnly: true,
-      secure: false, // true si HTTPS
-      sameSite: "Lax", // autorise les cookies même entre localhost:5000 et localhost:5173
+      // secure: isProduction,
+      secure: false,
+      // sameSite: isProduction ? "Strict" : "Lax",
+      sameSite: "Lax",
       maxAge: Number(process.env.COOKIE_LIFETIME) || 7 * 24 * 60 * 60 * 1000, //7d par default
     });
 
     // SECURITE ++
     res.cookie("accessToken", accessToken, {
       httpOnly: false, // pour pouvoir acceder au cookie depuis js
-      secure: false, // true si HTTPS
-      sameSite: "Lax", // autorise les cookies même entre localhost:5000 et localhost:5173
+      // secure: isProduction,
+      secure: false,
+      // sameSite: isProduction ? "Strict" : "Lax",
+      sameSite: "Lax",
       maxAge: Number(process.env.COOKIE_LIFETIME) || 7 * 24 * 60 * 60 * 1000, //7d par default
     });
 
@@ -307,63 +314,24 @@ export const registerController = async (req, res) => {
   }
 };
 
-// Déconnexion
-export const logoutController = async (req, res) => {
-  try {
-    const accessToken = req.cookies?.accessToken;
+export const logoutController = (req, res) => {
+  const isProduction = process.env.NODE_ENV === "production";
 
-    // ✅ Pas de token → déjà déconnecté (204 No Content sans message inutile)
-    if (!accessToken) {
-      return res.sendStatus(204);
-    }
+  const cookieOptions = {
+    httpOnly: true,
+    // secure: isProduction,
+    secure: false,
+    // sameSite: isProduction ? "Strict" : "Lax",
+    sameSite: "Lax",
+  };
 
-    // ✅ Vérification de validité du token
-    let decoded;
-    try {
-      decoded = verifyToken(accessToken, process.env.JWT_SECRET);
-    } catch (err) {
-      return res.status(401).json({
-        ok: false,
-        message: "Invalid or expired access token",
-      });
-    }
+  res.clearCookie("refreshToken", cookieOptions);
+  res.clearCookie("accessToken", {
+    ...cookieOptions,
+    httpOnly: false, // correspond à la création du accessToken
+  });
 
-    // ✅ Vérifie si l'utilisateur existe
-    const user = await userExists("_id", decoded._id);
-    if (!user) {
-      return res.status(401).json({
-        ok: false,
-        message: "Unknown user",
-      });
-    }
-
-    // ✅ Supprime le refreshToken stocké côté serveur (DB)
-    await updateUser("_id", decoded._id, null, { refreshToken: true }, {});
-
-    // ✅ Supprime les cookies côté client
-    res.clearCookie("refreshToken", {
-      httpOnly: true,
-      secure: false, // change en true en production avec HTTPS
-      sameSite: "Lax",
-    });
-
-    res.clearCookie("accessToken", {
-      httpOnly: false,
-      secure: false,
-      sameSite: "Lax",
-    });
-
-    return res.status(200).json({
-      ok: true,
-      message: "Logout successful",
-    });
-  } catch (error) {
-    return res.status(500).json({
-      ok: false,
-      message: "Logout error",
-      error: error.message,
-    });
-  }
+  res.status(200).json({ ok: true, message: "User logged out successfully" });
 };
 
 // retourns user info
@@ -485,42 +453,29 @@ export const saveUserInfoController = async (req, res) => {
 };
 
 export const deleteUserController = async (req, res) => {
-  if (!req.params.id) {
-    throw new Error("user to delete required");
-  }
-  const userToDelete = req.params.id;
-
-  if (!req.cookies.refreshToken) {
-    return res.status(401).json({ ok: false, message: "Token required" });
-  }
-  const refreshToken = req.cookies.refreshToken;
-
-  const { ok, status, message } = await ValidateIsAdminFromRefreshToken(
-    refreshToken
-  );
-
-  if (!ok) {
-    return {
-      ok,
-      status,
-      message,
-    };
-  }
-  // Seulement l'administrateur peut supprimer des utilisateurs
-  // Extraire info du token
   try {
-    const ObjectId = mongoose.Types.ObjectId;
+    const userId = req.userId;
 
-    const cleanUserToDelete = cleanUserToDelete.startsWith(":")
-      ? cleanUserToDelete.slice(1).trim()
-      : cleanUserToDelete.trim();
+    // Supprimer l'utilisateur
+    await User.findByIdAndDelete(userId);
 
-    const id = new mongoose.Types.ObjectId(cleanUserToDelete);
-    const result = await User.deleteOne({ _id: id });
+    // Supprimer les cookies
+    res.clearCookie("accessToken", {
+      httpOnly: false,
+      secure: false,
+      sameSite: "Lax",
+    });
 
-    res.status(status).json({ ok, message });
-  } catch (error) {
-    res.status(500).json({ ok: false, message: "server error" });
+    res.clearCookie("refreshToken", {
+      httpOnly: true,
+      secure: false,
+      sameSite: "Lax",
+    });
+
+    res.status(200).json({ message: "Compte supprimé avec succès." });
+  } catch (err) {
+    console.error("Erreur lors de la suppression du compte :", err);
+    res.status(500).json({ message: "Erreur serveur." });
   }
 };
 

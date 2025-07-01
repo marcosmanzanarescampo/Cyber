@@ -1,7 +1,8 @@
 export async function getNavbarLinks() {
   let formations = [];
+  const url = import.meta.env.VITE_BACKEND_URL;
   try {
-    const res = await fetch("http://localhost:5000/course/courses");
+    const res = await fetch(`${url}/course/courses`);
     const data = await res.json();
     formations = Array.isArray(data.courses) ? data.courses : [];
   } catch (e) {
